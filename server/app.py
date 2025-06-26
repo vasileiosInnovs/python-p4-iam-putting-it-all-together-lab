@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from xmlrpc import client
 from flask import jsonify, make_response, request, session
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
