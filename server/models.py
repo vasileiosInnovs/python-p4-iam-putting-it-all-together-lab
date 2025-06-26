@@ -43,6 +43,12 @@ class Recipe(db.Model, SerializerMixin):
 
     user = db.relationship('User', back_populates='recipes')
 
+    @validates("instructions")
+    def validate_instructions(self, key, value):
+        if len(value) < 50:
+            raise ValueError("Instructions must be at least 50 characters.")
+        return value
+
     __table_args__ = (
     CheckConstraint("length(instructions) >= 50", name="check_instructions_min_length"),
 )
