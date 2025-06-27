@@ -1,4 +1,3 @@
-from dis import _Instruction
 from sqlalchemy import CheckConstraint
 from sqlalchemy.orm import validates
 from sqlalchemy.ext.hybrid import hybrid_property

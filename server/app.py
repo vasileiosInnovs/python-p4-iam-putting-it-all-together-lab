@@ -175,7 +175,7 @@ class RecipeIndex(Resource):
             db.session.add(new_recipe)
             db.session.commit()
 
-            from models import User  # if not already imported
+            from models import User
             user = User.query.get(user_id)
 
             if not user:
