@@ -23,7 +23,7 @@ class User(db.Model, SerializerMixin):
     def password(self):
         raise AttributeError("Access has been denied!")
     
-    @password.setter
+    @password_hash.setter
     def password(self, text):
         self._password_hash = bcrypt.generate_password_hash(text)
 

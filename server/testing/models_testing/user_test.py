@@ -30,7 +30,7 @@ class TestUser:
                     """of Classic Hollywood cinema."""
             )
 
-            user.password = "whosafraidofvirginiawoolf"
+            user._password_hash = "whosafraidofvirginiawoolf"
             
             db.session.add(user)
             db.session.commit()
@@ -52,7 +52,7 @@ class TestUser:
                 """of Classic Hollywood cinema.""")
             
             with pytest.raises(AttributeError):
-                created_user.password
+                created_user.password_hash
 
     def test_requires_username(self):
         '''requires each record to have a username.'''
