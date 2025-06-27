@@ -19,8 +19,8 @@ class User(db.Model, SerializerMixin):
     def __repr__(self):
         return f'<ID: {self.id} Username {self.username}>'
     
-    @hybrid_property
-    def password(self):
+    @property
+    def password_hash(self):
         raise AttributeError("Access has been denied!")
     
     @password_hash.setter
